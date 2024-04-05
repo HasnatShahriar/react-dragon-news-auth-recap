@@ -2,23 +2,21 @@ import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 
 
-const Login = () => {
-
-
-  const handleLogin = e =>{
+const Register = () => {
+  
+  const handleRegister = e =>{
     e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
-    console.log(form.get('email'),form.get('password'));
+    console.log(form.get('password'));
   }
-
 
   return (
     <div>
       <Navbar />
       <div>
-        <h2 className="text-3xl text-center font-semibold mt-10">Please Login</h2>
-        <form onClick={handleLogin} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
+        <h2 className="text-3xl text-center font-semibold mt-10">Please Register</h2>
+        <form onClick={handleRegister} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -38,10 +36,10 @@ const Login = () => {
             <button className="btn btn-primary">Login</button>
           </div>
         </form>
-        <p className="text-center">Don't have an account <Link className="text-blue-800 font-bold" to='/register'>Register</Link></p>
+        <p className="text-center">Already have an account <Link className="text-blue-800 font-bold" to='/login'>Login</Link></p>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;
